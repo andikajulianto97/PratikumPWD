@@ -1,0 +1,293 @@
+:root {
+    --bg-main: #000000;
+    --bg-card: #0a0a0a;
+    --bg-border: #222222;
+    --text-primary: #ffffff;
+    --text-secondary: #888888;
+    --accent: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Courier New', Courier, monospace, system-ui, sans-serif;
+    line-height: 1.6;
+    min-height: 2500px;
+}
+
+.site-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    border-bottom: 1px solid var(--bg-border);
+    background: #050505;
+}
+
+.band-logo {
+    font-size: 3.5rem;
+    letter-spacing: 6px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.tagline {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+
+.content-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.album-spotlight {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-border);
+    padding: 40px;
+    margin-bottom: 60px;
+    border-radius: 4px;
+}
+
+.album-badge {
+    display: inline-block;
+    background: #1f1f1f;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+}
+
+.album-title {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.album-meta {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 30px;
+}
+
+.spotlight-grid {
+    display: grid !important;
+    grid-template-columns: 320px 1fr; 
+    gap: 40px;
+    align-items: start;
+}
+
+.album-cover-box {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1;
+    background: #000;
+    border: 1px solid #333;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.album-cover-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(120%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.album-cover-photo:hover {
+    filter: grayscale(0%) contrast(100%);
+    transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+    .spotlight-grid {
+        grid-template-columns: 1fr;
+    }
+    .album-cover-box {
+        margin: 0 auto;
+        max-width: 280px;
+    }
+}
+
+.player-widget {
+    margin: 20px 0;
+    padding: 20px;
+    background: #000;
+    border: 1px solid #333;
+}
+
+.btn-play {
+    width: 100%;
+    padding: 14px;
+    background: #fff;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+}
+
+.btn-play:hover {
+    background: #ccc;
+}
+
+.player-status {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 10px;
+}
+
+.tracklist-mini ol {
+    padding-left: 20px;
+    color: #ddd;
+}
+
+.tracklist-mini li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.duration {
+    color: var(--text-secondary);
+}
+
+section {
+    margin-bottom: 80px;
+}
+
+h2 {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    border-bottom: 1px solid var(--bg-border);
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+}
+
+p {
+    color: #ccc;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+.lyric-card {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-border);
+    padding: 30px;
+    margin-bottom: 25px;
+    text-align: left !important;
+}
+
+.lyric-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #fff;
+    text-align: left !important;
+}
+
+.lyric-text {
+    color: #aaa;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    text-align: left !important;
+    white-space: pre-line;       
+    margin-left: 0 !important;  
+    padding-left: 0 !important;
+}
+
+.credits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.credit-box {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-border);
+    padding: 25px;
+}
+
+.credit-box h4 {
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.credit-box ul {
+    list-style: none;
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+.credit-box li {
+    margin-bottom: 8px;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 60px 20px;
+    border-top: 1px solid var(--bg-border);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    background-color: #111111;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 12px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    opacity: 0.4;
+    visibility: hidden;
+    pointer-events: none; 
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.scroll-top-btn.visible {
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 0.4;
+}
+
+.scroll-top-btn:hover {
+    opacity: 1 !important;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.arrow-icon {
+    width: 16px;
+    height: 16px;
+}
